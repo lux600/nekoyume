@@ -2,9 +2,10 @@ import click
 import time
 import os
 
+from babel.messages.frontend import compile_catalog
 from ptpython.repl import embed
 from raven import Client
-from secp256k1 import PrivateKey
+from coincurve import PrivateKey
 
 from nekoyume.models import Node, Block, Move, User, get_my_public_url
 from nekoyume.app import app, db
@@ -70,6 +71,13 @@ def init(seed, sync):
     if sync:
         click.echo('Syncing blocks...')
         Block.sync(click=click)
+
+    click.echo('Compiling translations...')
+    dir_path = os.path.abspath(os.path.dirname(__file__))
+    compile_command = compile_catalog()
+    compile_command.directory = dir_path + '/translations'
+    compile_command.finalize_options()
+    compile_command.run()
 
 
 @cli.command()

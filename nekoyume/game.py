@@ -3,7 +3,7 @@ from functools import wraps
 from flask import (Blueprint, g, request, redirect, render_template,
                    session, url_for)
 from flask_babel import Babel
-from secp256k1 import PrivateKey
+from coincurve import PrivateKey
 from sqlalchemy import func
 
 from nekoyume.models import cache, db, LevelUp, Move, Node, User
@@ -130,6 +130,8 @@ def post_move():
         return redirect(url_for('.get_dashboard'))
 
     if request.values.get('name') == 'hack_and_slash':
+        if g.user.avatar().dead:
+            return redirect(url_for('.get_dashboard'))
         move = g.user.hack_and_slash(request.values.get('weapon'),
                                      request.values.get('armor'),
                                      request.values.get('food'),)

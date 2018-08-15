@@ -2,7 +2,7 @@
 Nekoyume
 ========
 
-|build| |coverage| |pypi| |chat|
+|build| |coverage| |pypi| |chat| |gitter|
 
 Nekoyume is the first `MMORPG <https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game>`_ based on `blockchain <https://en.wikipedia.org/wiki/Blockchain>`_.
 
@@ -15,10 +15,10 @@ Dependencies
 ------------
 
 * `Python <http://python.org/>`_ >= 3.6
-* `Redis <https://redis.io/>`_
 * `SQLite <https://www.sqlite.org/>`_ >= 3.16.0
 * `gmp <https://gmplib.org/>`_
 * (Recommended) `PostgreSQL <https://www.postgresql.org/>`_ >= 9.5
+* (Recommended) `Redis <https://redis.io/>`_
 
 Installation
 ------------
@@ -41,8 +41,10 @@ Installation for development
 
    $ git clone git@github.com:nekoyume/nekoyume.git
    $ cd nekoyume
-   $ mkvirtualenv -p $(which python3.6) -a $(pwd) nekoyume
+   $ virtualenv -p $(which python3.6) .env
+   $ . .env/bin/activate
    $ pip install -e .[dev,test]
+   $ nekoyume init
 
 
 Launching node
@@ -78,3 +80,6 @@ Mining
 
 .. |deploy| image:: https://www.herokucdn.com/deploy/button.svg
   :target: https://heroku.com/deploy
+
+.. |gitter| image:: https://badges.gitter.im/gitterHQ/gitter.png
+  :target: https://gitter.im/nekoyume-dev

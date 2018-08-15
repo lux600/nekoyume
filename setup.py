@@ -24,16 +24,15 @@ install_requires = [
     'Flask-Babel >= 0.11.2, < 0.12.0',
     'Flask-Caching >= 1.4.0, < 1.5.0',
     'Flask-SQLAlchemy >= 2.3.2, < 2.4.0',
-    'gevent == 1.3.1',
-    'gunicorn >= 19.7.1, < 19.8.0',
+    'gevent == 1.3.5',
+    'gunicorn >= 19.9.0',
     'psycopg2 >= 2.7.5, < 2.8.0',
     'ptpython == 0.41',
-    'pycrypto == 2.6',
     'pytz >= 2018.3',
     'raven==6.9.0',
     'redis >= 2.10.6, < 2.11.0',
     'requests >= 2.18.4, < 2.19.0',
-    'secp256k1 >= 0.13.2, < 0.14',
+    'coincurve >= 8.0.2, < 8.1.0',
     'SQLAlchemy >= 1.2.2, < 1.3.0',
     'tablib >= 0.12.1, < 0.13.0',
 ]
@@ -73,7 +72,7 @@ if __name__ == '__main__':
             ],
         },
         package_data={
-            'nekoyume': ['data/*', 'templates/*.html'],
+            'nekoyume': ['data/*', 'templates/*.html', 'translations/*/LC_MESSAGES/*'],
         },
         entry_points={
             'console_scripts': [
