@@ -34,7 +34,7 @@
                             <center>
                             <img width="80%" src="{{ url_for('static', filename='nekoyume.png') }}" alt="nekoyume">
                             <p>
-                            {% trans %}Hello! Welcome to the world of Nekoyume. Please set your own private key and input that in the form below so that you can start game right know. Private key is a password that identify you. Please make this unique.{% endtrans %}</p>
+                            {% trans %}Hello! Welcome to the world of Nekoyume. Please set your own private key and input that in the form below so that you can start game right know. Private key is a password that identifies you. Please make this unique.{% endtrans %}</p>
                             {% if request.args.get('error') == 'invalid-private-key' %}
                                 <p>{% trans %}Please enter a valid private key of 64 hexadecimal digits (it can be optionally prefixed with <tt>0x</tt>).{% endtrans %}</p>
                             {% endif %}

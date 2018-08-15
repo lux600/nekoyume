@@ -96,7 +96,7 @@ def sync():
                 time.sleep(15)
         except AttributeError:
             click.echo(("There is no well-connected node. "
-                        "please check you network."))
+                        "please check your network."))
             break
 
 

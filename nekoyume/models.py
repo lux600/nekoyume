@@ -37,7 +37,7 @@ from nekoyume.items import (Armor,
 from nekoyume import hashcash
 
 
-PROTOCOL_VERSION: int = 2
+PROTOCOL_VERSION: int = 2       
 db = SQLAlchemy()
 cache = Cache()
 
